@@ -48,25 +48,23 @@ public class WindowView extends JFrame {
                 int x = e.getX() / WindowView.CELL_SIZE;//номер ячейки
                 int y = e.getY() / WindowView.CELL_SIZE;
                 if (x < arr[0].length || y < arr.length) {
-                    try {
-                        if (!stopGame) {
-                            moveController.makeMove(x, y, game.getField());
-                        }
-                        if (winnerController.WhoseWin() != null) {
-                            if (winnerController.WhoseWin().toString().contains(game.getPlayer1().toString())) {
-//                                status = true;
-                                stopGame = true;
-                            }
-                            if (winnerController.WhoseWin().toString().contains(game.getPlayer2().toString())) {
-//                                status = true;
-                                stopGame = true;
-                            }
-                        }
-                    } catch (WrongCoordinatinatesException ee) {
 
+                    if (!stopGame) {
+                        moveController.makeMove(x, y, game.getField());
+                    }
+                    if (winnerController.WhoseWin() != null) {
+                        if (winnerController.WhoseWin() != null && winnerController.WhoseWin().toString().contains(game.getPlayer1().toString())) {
+//                                status = true;
+                            stopGame = true;
+                        }
+                        if (winnerController.WhoseWin() != null && winnerController.WhoseWin().toString().contains(game.getPlayer2().toString())) {
+//                                status = true;
+                            stopGame = true;
+                        }
                     }
                 }
             }
+
 
             @Override
             public void mousePressed(MouseEvent e) {

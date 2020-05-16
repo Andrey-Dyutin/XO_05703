@@ -113,14 +113,6 @@ public class Animator implements Runnable {
 
     public void resetImage() {
         drawCells();
-//        for (int i = WinnerController.winLineY[0]; i <= WinnerController.winLineY[1]; i++) {
-//            graphics.drawImage(images.get(2),
-//                    WinnerController.winLineX * WindowView.CELL_SIZE,
-//                    i * WindowView.CELL_SIZE,
-//                    WindowView.CELL_SIZE ,
-//                    WindowView.CELL_SIZE,
-//                    null);
-//        }
         for (int i = 0; i < WinnerController.winLine.length; i++) {
             for (int j = 0; j < WinnerController.winLine[0].length; j++) {
                 if (WinnerController.winLine[i][j] == 1) {
