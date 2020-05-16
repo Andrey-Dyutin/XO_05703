@@ -32,7 +32,7 @@ public class WinnerController {
         winLine = new int[game.getField().getField().length][game.getField().getField()[0].length];
         //Победа по вертикали.
         for (int i = 0; i < game.getField().getField().length; i++) {
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 6; j++) {
                 int[] temp = new int[game.getField().getField()[0].length];
                 for (int k = j; k < 5 + j; k++) {
                     temp[i] += game.getField().getField()[i][k];
